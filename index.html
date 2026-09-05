@@ -3,46 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android TV Hidden Settings</title>
+    <title>Android TV Settings Launcher</title>
     <style>
+        * { box-sizing: border-box; }
         body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: sans-serif;
-            padding: 20px;
+            background-color: #0d1117;
+            color: #f0f6fc;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            padding: 30px 20px;
             margin: 0;
         }
         h1 {
             text-align: center;
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 28px;
+            margin-bottom: 30px;
+            color: #58a6ff;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
             max-width: 1200px;
             margin: 0 auto;
         }
-        a {
-            background-color: #1f1f1f;
-            color: #ffffff;
-            border: 2px solid #333;
-            padding: 15px;
+        button {
+            background-color: #161b22;
+            color: #f0f6fc;
+            border: 2px solid #30363d;
+            padding: 18px 20px;
             text-align: center;
-            text-decoration: none;
-            border-radius: 8px;
+            border-radius: 10px;
             font-size: 16px;
-            font-weight: bold;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.2s;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.15s ease-in-out;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
-        a:focus, a:hover {
-            background-color: #007acc;
-            border-color: #00aaff;
+        button:focus, button:hover {
+            background-color: #1f6feb;
+            border-color: #58a6ff;
+            color: #ffffff;
             outline: none;
+            transform: scale(1.02);
+            box-shadow: 0 6px 15px rgba(31, 111, 235, 0.4);
         }
     </style>
 </head>
@@ -51,54 +55,29 @@
     <h1>Android TV Settings Launcher</h1>
 
     <div class="grid">
-        <!-- Open Settings -->
-        <a href="intent:#Intent;action=android.settings.SETTINGS;end;">Open Settings</a>
-        
-        <!-- Open Droidlogic More Settings -->
-        <a href="intent:#Intent;action=com.droidlogic.intent.action.MORE_SETTING;end;">Open Droidlogic More Settings</a>
-        
-        <!-- Open Apps Settings -->
-        <a href="intent:#Intent;action=android.settings.MANAGE_APPLICATIONS_SETTINGS;end;">Open Apps Settings</a>
-        
-        <!-- Open All Apps Settings -->
-        <a href="intent:#Intent;action=android.settings.APPLICATION_SETTINGS;end;">Open All Apps Settings</a>
-        
-        <!-- Open Security Settings -->
-        <a href="intent:#Intent;action=android.settings.SECURITY_SETTINGS;end;">Open Security Settings</a>
-        
-        <!-- Open Display Sound Settings -->
-        <a href="intent:#Intent;action=android.settings.SOUND_SETTINGS;end;">Open Sound Settings</a>
-        
-        <!-- Open Date and Time Settings -->
-        <a href="intent:#Intent;action=android.settings.DATE_SETTINGS;end;">Open Date and Time Settings</a>
-        
-        <!-- Open Location Settings -->
-        <a href="intent:#Intent;action=android.settings.LOCATION_SOURCE_SETTINGS;end;">Open Location Settings</a>
-        
-        <!-- Open Developer Settings -->
-        <a href="intent:#Intent;action=android.settings.APPLICATION_DEVELOPMENT_SETTINGS;end;">Open Developer Settings</a>
-        
-        <!-- Open Input Method Keyboard Settings -->
-        <a href="intent:#Intent;action=android.settings.INPUT_METHOD_SETTINGS;end;">Open Input Method Keyboard Settings</a>
-        
-        <!-- Open Language Settings -->
-        <a href="intent:#Intent;action=android.settings.LOCALE_SETTINGS;end;">Open Language Settings</a>
-        
-        <!-- Open Inputs Settings -->
-        <a href="intent:#Intent;action=android.settings.HARD_KEYBOARD_SETTINGS;end;">Open Inputs Settings</a>
-        
-        <!-- Open About Settings -->
-        <a href="intent:#Intent;action=android.settings.DEVICE_INFO_SETTINGS;end;">Open About Settings</a>
-        
-        <!-- Open Device Name Settings -->
-        <a href="intent:#Intent;action=android.settings.BLUETOOTH_SETTINGS;end;">Open Device Name / Bluetooth</a>
-        
-        <!-- Open Accessibility Settings -->
-        <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;end;">Open Accessibility Settings</a>
-        
-        <!-- Open Account Settings -->
-        <a href="intent:#Intent;action=android.settings.SYNC_SETTINGS;end;">Open Account Settings</a>
-        
-        <!-- Open Google Assistant -->
-        <a href="intent:#Intent;action=android.intent.action.ASSIST;end;">Open Google Assistant</a>
+        <button onclick="openIntent('android.settings.SETTINGS', 'com.android.settings')">Open Settings</button>
+        <button onclick="openIntent('com.droidlogic.intent.action.MORE_SETTING', 'com.droidlogic.defaultsetting')">Open Droidlogic More Settings</button>
+        <button onclick="openIntent('android.settings.MANAGE_APPLICATIONS_SETTINGS', 'com.android.settings')">Open Apps Settings</button>
+        <button onclick="openIntent('android.settings.APPLICATION_SETTINGS', 'com.android.settings')">Open All Apps Settings</button>
+        <button onclick="openIntent('android.settings.SECURITY_SETTINGS', 'com.android.settings')">Open Security Settings</button>
+        <button onclick="openIntent('android.settings.SOUND_SETTINGS', 'com.android.settings')">Open Display Sound Settings</button>
+        <button onclick="openIntent('android.settings.DATE_SETTINGS', 'com.android.settings')">Open Date and Time Settings</button>
+        <button onclick="openIntent('android.settings.LOCATION_SOURCE_SETTINGS', 'com.android.settings')">Open Location Settings</button>
+        <button onclick="openIntent('android.settings.APPLICATION_DEVELOPMENT_SETTINGS', 'com.android.settings')">Open Developer Settings</button>
+        <button onclick="openIntent('android.settings.INPUT_METHOD_SETTINGS', 'com.android.settings')">Open Input Method Keyboard Settings</button>
+        <button onclick="openIntent('android.settings.LOCALE_SETTINGS', 'com.android.settings')">Open Language Settings</button>
+        <button onclick="openIntent('android.settings.HARD_KEYBOARD_SETTINGS', 'com.android.settings')">Open Inputs Settings</button>
+        <button onclick="openIntent('android.settings.DEVICE_INFO_SETTINGS', 'com.android.settings')">Open About Settings</button>
+        <button onclick="openIntent('android.settings.BLUETOOTH_SETTINGS', 'com.android.settings')">Open Device Name Settings</button>
+        <button onclick="openIntent('android.settings.ACCESSIBILITY_SETTINGS', 'com.android.settings')">Open Accessibility Settings</button>
+        <button onclick="openIntent('android.settings.SYNC_SETTINGS', 'com.android.settings')">Open Account Settings</button>
+        <button onclick="openIntent('android.intent.action.ASSIST', 'com.google.android.googlequicksearchbox')">Open Google Assistant</button>
     </div>
+
+    <script>
+        function openIntent(action, pkg) {
+            window.location.href = "intent:#Intent;action=" + action + ";package=" + pkg + ";end;";
+        }
+    </script>
+</body>
+</html>
