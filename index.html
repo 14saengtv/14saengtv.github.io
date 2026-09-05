@@ -3,81 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Android TV Settings Launcher</title>
+    <title>Accessibility Test</title>
+
     <style>
-        * { box-sizing: border-box; }
         body {
-            background-color: #0d1117;
-            color: #f0f6fc;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            padding: 30px 20px;
+            background: #121212;
+            color: white;
+            font-family: sans-serif;
+            padding: 20px;
             margin: 0;
         }
+
         h1 {
             text-align: center;
-            font-size: 28px;
-            margin-bottom: 30px;
-            color: #58a6ff;
+            margin-bottom: 25px;
         }
+
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 16px;
+            gap: 15px;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: auto;
         }
-        button {
-            background-color: #161b22;
-            color: #f0f6fc;
-            border: 2px solid #30363d;
-            padding: 18px 20px;
+
+        a {
+            background: #1f1f1f;
+            color: white;
+            border: 2px solid #444;
+            padding: 20px;
             text-align: center;
-            border-radius: 10px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            width: 100%;
-            transition: all 0.15s ease-in-out;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: bold;
         }
-        button:focus, button:hover {
-            background-color: #1f6feb;
-            border-color: #58a6ff;
-            color: #ffffff;
+
+        a:focus,
+        a:hover {
+            background: #007acc;
+            border-color: #00aaff;
             outline: none;
-            transform: scale(1.02);
-            box-shadow: 0 6px 15px rgba(31, 111, 235, 0.4);
         }
     </style>
 </head>
+
 <body>
 
-    <h1>Android TV Settings Launcher</h1>
+<h1>Accessibility Test</h1>
 
-    <div class="grid">
-        <button onclick="openIntent('android.settings.SETTINGS', 'com.android.settings')">Open Settings</button>
-        <button onclick="openIntent('com.droidlogic.intent.action.MORE_SETTING', 'com.droidlogic.defaultsetting')">Open Droidlogic More Settings</button>
-        <button onclick="openIntent('android.settings.MANAGE_APPLICATIONS_SETTINGS', 'com.android.settings')">Open Apps Settings</button>
-        <button onclick="openIntent('android.settings.APPLICATION_SETTINGS', 'com.android.settings')">Open All Apps Settings</button>
-        <button onclick="openIntent('android.settings.SECURITY_SETTINGS', 'com.android.settings')">Open Security Settings</button>
-        <button onclick="openIntent('android.settings.SOUND_SETTINGS', 'com.android.settings')">Open Display Sound Settings</button>
-        <button onclick="openIntent('android.settings.DATE_SETTINGS', 'com.android.settings')">Open Date and Time Settings</button>
-        <button onclick="openIntent('android.settings.LOCATION_SOURCE_SETTINGS', 'com.android.settings')">Open Location Settings</button>
-        <button onclick="openIntent('android.settings.APPLICATION_DEVELOPMENT_SETTINGS', 'com.android.settings')">Open Developer Settings</button>
-        <button onclick="openIntent('android.settings.INPUT_METHOD_SETTINGS', 'com.android.settings')">Open Input Method Keyboard Settings</button>
-        <button onclick="openIntent('android.settings.LOCALE_SETTINGS', 'com.android.settings')">Open Language Settings</button>
-        <button onclick="openIntent('android.settings.HARD_KEYBOARD_SETTINGS', 'com.android.settings')">Open Inputs Settings</button>
-        <button onclick="openIntent('android.settings.DEVICE_INFO_SETTINGS', 'com.android.settings')">Open About Settings</button>
-        <button onclick="openIntent('android.settings.BLUETOOTH_SETTINGS', 'com.android.settings')">Open Device Name Settings</button>
-        <button onclick="openIntent('android.settings.ACCESSIBILITY_SETTINGS', 'com.android.settings')">Open Accessibility Settings</button>
-        <button onclick="openIntent('android.settings.SYNC_SETTINGS', 'com.android.settings')">Open Account Settings</button>
-        <button onclick="openIntent('android.intent.action.ASSIST', 'com.google.android.googlequicksearchbox')">Open Google Assistant</button>
-    </div>
+<div class="grid">
 
-    <script>
-        function openIntent(action, pkg) {
-            window.location.href = "intent:#Intent;action=" + action + ";package=" + pkg + ";end;";
-        }
-    </script>
+    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;end;">
+        1. Accessibility Settings
+    </a>
+
+    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;package=com.android.settings;end;">
+        2. Accessibility + Settings
+    </a>
+
+    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;category=android.intent.category.DEFAULT;end;">
+        3. Accessibility + DEFAULT
+    </a>
+
+    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;category=android.intent.category.BROWSABLE;end;">
+        4. Accessibility + BROWSABLE
+    </a>
+
+    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;category=android.intent.category.DEFAULT;category=android.intent.category.BROWSABLE;end;">
+        5. Accessibility + DEFAULT + BROWSABLE
+    </a>
+
+    <a href="intent:#Intent;action=android.intent.action.MAIN;category=com.android.settings.SHORTCUT;package=com.android.settings;end;">
+        6. Settings Shortcut
+    </a>
+
+    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS_FOR_SUW;end;">
+        7. Accessibility Setup Wizard
+    </a>
+
+    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_DETAILS_SETTINGS;end;">
+        8. Accessibility Details
+    </a>
+
+    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SHORTCUT_SETTINGS;end;">
+        9. Accessibility Shortcut
+    </a>
+
+    <a href="intent:#Intent;action=android.intent.action.MAIN;category=com.android.settings.SHORTCUT;end;">
+        10. Settings Shortcut
+    </a>
+
+</div>
+
 </body>
 </html>
