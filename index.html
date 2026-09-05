@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android TV Hidden Settings</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: sans-serif;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        a {
+            background-color: #1f1f1f;
+            color: #ffffff;
+            border: 2px solid #333;
+            padding: 15px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        a:focus, a:hover {
+            background-color: #007acc;
+            border-color: #00aaff;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Android TV Settings Launcher</h1>
+
+    <div class="grid">
+        <!-- Open Settings -->
+        <a href="intent:#Intent;action=android.settings.SETTINGS;end;">Open Settings</a>
+        
+        <!-- Open Droidlogic More Settings -->
+        <a href="intent:#Intent;action=com.droidlogic.intent.action.MORE_SETTING;end;">Open Droidlogic More Settings</a>
+        
+        <!-- Open Apps Settings -->
+        <a href="intent:#Intent;action=android.settings.MANAGE_APPLICATIONS_SETTINGS;end;">Open Apps Settings</a>
+        
+        <!-- Open All Apps Settings -->
+        <a href="intent:#Intent;action=android.settings.APPLICATION_SETTINGS;end;">Open All Apps Settings</a>
+        
+        <!-- Open Security Settings -->
+        <a href="intent:#Intent;action=android.settings.SECURITY_SETTINGS;end;">Open Security Settings</a>
+        
+        <!-- Open Display Sound Settings -->
+        <a href="intent:#Intent;action=android.settings.SOUND_SETTINGS;end;">Open Sound Settings</a>
+        
+        <!-- Open Date and Time Settings -->
+        <a href="intent:#Intent;action=android.settings.DATE_SETTINGS;end;">Open Date and Time Settings</a>
+        
+        <!-- Open Location Settings -->
+        <a href="intent:#Intent;action=android.settings.LOCATION_SOURCE_SETTINGS;end;">Open Location Settings</a>
+        
+        <!-- Open Developer Settings -->
+        <a href="intent:#Intent;action=android.settings.APPLICATION_DEVELOPMENT_SETTINGS;end;">Open Developer Settings</a>
+        
+        <!-- Open Input Method Keyboard Settings -->
+        <a href="intent:#Intent;action=android.settings.INPUT_METHOD_SETTINGS;end;">Open Input Method Keyboard Settings</a>
+        
+        <!-- Open Language Settings -->
+        <a href="intent:#Intent;action=android.settings.LOCALE_SETTINGS;end;">Open Language Settings</a>
+        
+        <!-- Open Inputs Settings -->
+        <a href="intent:#Intent;action=android.settings.HARD_KEYBOARD_SETTINGS;end;">Open Inputs Settings</a>
+        
+        <!-- Open About Settings -->
+        <a href="intent:#Intent;action=android.settings.DEVICE_INFO_SETTINGS;end;">Open About Settings</a>
+        
+        <!-- Open Device Name Settings -->
+        <a href="intent:#Intent;action=android.settings.BLUETOOTH_SETTINGS;end;">Open Device Name / Bluetooth</a>
+        
+        <!-- Open Accessibility Settings -->
+        <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;end;">Open Accessibility Settings</a>
+        
+        <!-- Open Account Settings -->
+        <a href="intent:#Intent;action=android.settings.SYNC_SETTINGS;end;">Open Account Settings</a>
+        
+        <!-- Open Google Assistant -->
+        <a href="intent:#Intent;action=android.intent.action.ASSIST;end;">Open Google Assistant</a>
+    </div>
