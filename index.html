@@ -1,128 +1,98 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessibility Test</title>
+<!-- Settings -->
 
-    <style>
-        body {
-            background: #121212;
-            color: white;
-            font-family: sans-serif;
-            padding: 20px;
-            margin: 0;
-        }
+<a href="intent:#Intent;component=com.android.tv.settings/.MainSettings;end;">
+    Open Settings
+</a>
 
-        h1 {
-            text-align: center;
-            margin-bottom: 25px;
-        }
+<!-- DredDroid More Settings -->
+<a href="intent:#Intent;component=com.android.tv.settings/.oemlink.VendorActivity;end;">
+    Open DredDroid More Settings
+</a>
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 15px;
-            max-width: 1200px;
-            margin: auto;
-        }
+<!-- Apps -->
 
-        a {
-            background: #1f1f1f;
-            color: white;
-            border: 2px solid #444;
-            padding: 20px;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 17px;
-            font-weight: bold;
-        }
+<a href="intent:#Intent;component=com.android.tv.settings/.device.apps.AppsActivity;end;">
+    Open Apps Settings
+</a>
 
-        a:focus,
-        a:hover {
-            background: #007acc;
-            border-color: #00aaff;
-            outline: none;
-        }
-    </style>
-</head>
+<a href="intent:#Intent;component=com.android.tv.settings/.device.apps.AllAppsActivity;end;">
+    Open All Apps Settings
+</a>
 
-<body>
+<!-- Security -->
 
-<h1>Accessibility Test</h1>
+<a href="intent:#Intent;component=com.android.tv.settings/.system.SecurityActivity;end;">
+    Open Security Settings
+</a>
 
-<div class="grid">
+<!-- Display / Sound -->
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;end;">
-        1. Accessibility Settings
-    </a>
+<a href="intent:#Intent;component=com.android.tv.settings/.device.displaysound.DisplaySoundActivity;end;">
+    Open Display Sound Settings
+</a>
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;package=com.android.settings;end;">
-        2. Accessibility + Settings
-    </a>
+<!-- Date / Time -->
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;category=android.intent.category.DEFAULT;end;">
-        3. Accessibility + DEFAULT
-    </a>
+<a href="intent:#Intent;component=com.android.tv.settings/.system.DateTimeActivity;end;">
+    Open Date and Time Settings
+</a>
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;category=android.intent.category.BROWSABLE;end;">
-        4. Accessibility + BROWSABLE
-    </a>
+<!-- Location -->
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;category=android.intent.category.DEFAULT;category=android.intent.category.BROWSABLE;end;">
-        5. Accessibility + DEFAULT + BROWSABLE
-    </a>
+<a href="intent:#Intent;component=com.android.tv.settings/.system.LocationActivity;end;">
+    Open Location Settings
+</a>
 
-    <a href="intent:#Intent;action=android.intent.action.MAIN;category=com.android.settings.SHORTCUT;package=com.android.settings;end;">
-        6. Settings Shortcut
-    </a>
+<!-- Developer -->
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS_FOR_SUW;end;">
-        7. Accessibility Setup Wizard
-    </a>
+<a href="intent:#Intent;component=com.android.tv.settings/.system.development.DevelopmentActivity;end;">
+    Open Developer Settings
+</a>
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_DETAILS_SETTINGS;end;">
-        8. Accessibility Details
-    </a>
+<!-- Input Method / Keyboard -->
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SHORTCUT_SETTINGS;end;">
-        9. Accessibility Shortcut
-    </a>
+<a href="intent:#Intent;component=com.android.tv.settings/.inputmethod.KeyboardActivity;end;">
+    Open Input Method Keyboard Settings
+</a>
 
-    <a href="intent:#Intent;action=android.intent.action.MAIN;category=com.android.settings.SHORTCUT;end;">
-        10. Settings Shortcut
-    </a>
+<!-- Language -->
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;component=com.android.tv.settings/.accessibility.AccessibilityActivity;end;">
-        ★ 11. TV Settings Component
-    </a>
+<a href="intent:#Intent;component=com.android.tv.settings/.system.LanguageActivity;end;">
+    Open Language Settings
+</a>
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;package=com.android.tv.settings;end;">
-        ★ 12. TV Settings Package
-    </a>
+<!-- Inputs -->
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;component=com.android.settings/.Settings$AccessibilitySettingsActivity;end;">
-        ★ 13. Mobile Settings Component
-    </a>
+<a href="intent:#Intent;component=com.android.tv.settings/.system.InputsActivity;end;">
+    Open Inputs Settings
+</a>
 
-    <a href="intent:#Intent;component=com.android.tv.settings/.oemlink.AccessibilitySettingsActivity;end;">
-        ★ 14. TV Accessibility Component 직접 호출
-    </a>
+<!-- About -->
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_SETTINGS;package=com.android.tv.settings;end;">
-        ★ 15. TV Accessibility + Package
-    </a>
+<a href="intent:#Intent;component=com.android.tv.settings/.about.AboutActivity;end;">
+    Open About Settings
+</a>
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_TV_OEM_LINK;end;">
-        ★ 16. TV Accessibility OEM Link
-    </a>
+<!-- Device Name -->
 
-    <a href="intent:#Intent;action=android.settings.ACCESSIBILITY_TV_OEM_LINK;package=com.android.tv.settings;end;">
-        ★ 17. TV Accessibility OEM + Package
-    </a>
+<a href="intent:#Intent;component=com.android.tv.settings/.name.DeviceNameSettingsActivity;end;">
+    Open Device Name Settings
+</a>
 
-</div>
+<!-- Accessibility -->
 
-</body>
-</html>
+<a href="intent:#Intent;component=com.android.tv.settings/.oemlink.AccessibilitySettingsActivity;end;">
+    Open Accessibility Settings
+</a>
+
+<!-- Account -->
+
+<a href="intent:#Intent;component=com.google.android.tv.settings.AccountActivity;end;">
+    Open Account Settings
+</a>
+
+<!-- Google Assistant -->
+
+<a href="intent:#Intent;component=com.android.tv.settings/.system.AssistantActivity;end;">
+    Open Google Assistant
+</a>
